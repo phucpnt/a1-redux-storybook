@@ -51,7 +51,7 @@ const Header = ({ openShortcutsHelp }) => (
   <div style={wrapperStyle}>
     <button style={shortcutIconStyle} onClick={openShortcutsHelp}>⌘</button>
     <a style={linkStyle} href="https://github.com/phucpnt/a1-redux-storybook" target="_blank">
-      <h3 style={headingStyle}>a1-redux Storybook</h3>
+      <h3 style={headingStyle}>a1 Storybook</h3>
     </a>
   </div>
 );
