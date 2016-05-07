@@ -1,4 +1,4 @@
-a1-redux storybook
+a1-redux storybook - React Storybook for Angular 1.x and Redux.
 ==========
 
 Motivation: Separating the presentation UI directive from Angular 1.x app. Make those components easy to develop and improve reusability.
