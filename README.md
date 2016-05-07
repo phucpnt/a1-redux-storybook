@@ -9,6 +9,7 @@ Please check [render-a1.js](src/client/preview/render-a1.js)
 
 **All** of the APIs still be the same of React storybook.
 
+Please check the [Simple Demo](https://github.com/phucpnt/a1-redux-storybook-simpledemo)
 
 ## React Storybook [![Build Status](https://travis-ci.org/kadirahq/react-storybook.svg?branch=master)](https://travis-ci.org/kadirahq/react-storybook)
 
