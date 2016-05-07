@@ -5,7 +5,7 @@ Motivation: Separating the presentation UI directive from Angular 1.x app. Make 
 This library can not be done without [React StoryBook](https://github.com/kadirahq/react-storybook). Kudos to React Storybook.
 
 The difference from React Storybook is the way the `iframe` rendering the `directive` of angular. Also you need to have
-Please check [render-a1.js](blob/master/src/client/preview/render-a1.js)
+Please check [render-a1.js](src/client/preview/render-a1.js)
 
 **All** of the APIs still be the same of React storybook.
 
