@@ -1,4 +1,16 @@
-# React Storybook [![Build Status](https://travis-ci.org/kadirahq/react-storybook.svg?branch=master)](https://travis-ci.org/kadirahq/react-storybook)
+a1-redux storybook
+==========
+
+Motivation: Separating the presentation UI directive from Angular 1.x app. Make those components easy to develop and improve reusability.
+This library can not be done without [React StoryBook](https://github.com/kadirahq/react-storybook). Kudos to React Storybook.
+
+The difference from React Storybook is the way the `iframe` rendering the `directive` of angular. Also you need to have
+Please check [render-a1.js](blob/master/src/client/preview/render-a1.js)
+
+**All** of the APIs still be the same of React storybook.
+
+
+## React Storybook [![Build Status](https://travis-ci.org/kadirahq/react-storybook.svg?branch=master)](https://travis-ci.org/kadirahq/react-storybook)
 
 Now you can develop and design React UI components without running your app.
 
