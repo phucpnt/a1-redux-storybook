@@ -1,10 +1,10 @@
 {
-  "name": "@kadira/storybook",
-  "version": "1.22.1",
-  "description": "React Storybook: Isolate React Component Development with Hot Reloading.",
+  "name": "a1-redux-storybook",
+  "version": "1.22.2",
+  "description": "a1-redux Storybook: Isolate Angular Directive Development with Hot Reloading. Forked from React Storybook",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kadirahq/react-storybook.git"
+    "url": "https://github.com/phucpnt/a1-redux-storybook.git"
   },
   "typings": "./config/storybook.d.ts",
   "license": "MIT",
@@ -45,9 +45,11 @@
   },
   "peerDependencies": {
     "react": "^0.14.7 || ^15.0.0",
-    "react-dom": "^0.14.7 || ^15.0.0"
+    "react-dom": "^0.14.7 || ^15.0.0",
+    "a1-redux": ">=0.0.9"
   },
   "devDependencies": {
+    "a1-redux": ">=0.0.9",
     "@kadira/react-split-pane": "^1.4.0",
     "react-modal": "^1.2.0",
     "redbox-react": "^1.2.2",
@@ -74,7 +76,7 @@
     "jsdom": "^8.4.0",
     "react-addons-test-utils": "^15.0.1"
   },
-  "main": "dist/client/index.js",
+  "main": "dist/client/index-a1.js",
   "engines": {
     "npm": "^3.0.0"
   },

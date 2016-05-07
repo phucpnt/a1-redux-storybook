@@ -7,7 +7,7 @@ const managerEntry =
   path.resolve(__dirname, '../manager');
 
 const config = {
-  devtool: '#cheap-module-eval-source-map',
+  devtool: '#source-map',
   entry: {
     manager: [
       managerEntry,

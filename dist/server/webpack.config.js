@@ -17,7 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var managerEntry = process.env.DEV_BUILD ? _path2.default.resolve(__dirname, '../../src/client/manager') : _path2.default.resolve(__dirname, '../manager');
 
 var config = {
-  devtool: '#cheap-module-eval-source-map',
+  devtool: '#source-map',
   entry: {
     manager: [managerEntry],
     preview: ['webpack-hot-middleware/client']
