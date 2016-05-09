@@ -1,6 +1,6 @@
 {
   "name": "a1-redux-storybook",
-  "version": "1.22.4",
+  "version": "1.23.4",
   "description": "a1-redux Storybook: Isolate Angular Directive Development with Hot Reloading. Forked from React Storybook",
   "repository": {
     "type": "git",
