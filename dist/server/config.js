@@ -15,10 +15,22 @@ var _extends3 = _interopRequireDefault(_extends2);
 exports.default = function (configType, baseConfig, configDir) {
   var config = baseConfig;
 
-  // search for a .babelrc in the config directory, then the module root directory
-  // if found, use that to extend webpack configurations
-  var babelConfig = loadBabelConfig(_path2.default.resolve(configDir, '.babelrc')) || loadBabelConfig('.babelrc');
+  // Search for a .babelrc in the config directory, then the module root
+  // directory. If found, use that to extend webpack configurations.
+  var babelConfig = loadBabelConfig(_path2.default.resolve(configDir, '.babelrc'));
+  var inConfigDir = true;
+
+  if (!babelConfig) {
+    babelConfig = loadBabelConfig('.babelrc');
+    inConfigDir = false;
+  }
+
   if (babelConfig) {
+    // If the custom config uses babel's `extends` clause, then replace it with
+    // an absolute path. `extends` will not work unless we do this.
+    if (babelConfig.extends) {
+      babelConfig.extends = inConfigDir ? _path2.default.resolve(configDir, babelConfig.extends) : _path2.default.resolve(babelConfig.extends);
+    }
     config.module.loaders[0].query = babelConfig;
   }
 
@@ -61,10 +73,12 @@ exports.default = function (configType, baseConfig, configDir) {
 
   logger.info('=> Loading custom webpack config.');
 
+  customConfig.module = customConfig.module || {};
+
   return (0, _extends3.default)({}, customConfig, config, {
     // We need to use our and custom plugins.
     plugins: [].concat((0, _toConsumableArray3.default)(config.plugins), (0, _toConsumableArray3.default)(customConfig.plugins || [])),
-    module: (0, _extends3.default)({}, config.module, customConfig.module || {}, {
+    module: (0, _extends3.default)({}, config.module, customConfig.module, {
       loaders: [].concat((0, _toConsumableArray3.default)(config.module.loaders), (0, _toConsumableArray3.default)(customConfig.module.loaders || []))
     })
   });
@@ -87,6 +101,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // avoid ESLint errors
 var logger = console;
 
+function removeReactHmre(presets) {
+  var index = presets.indexOf('react-hmre');
+  if (index > -1) {
+    presets.splice(index, 1);
+  }
+}
+
 // Tries to load a .babelrc and returns the parsed object if successful
 function loadBabelConfig(babelConfigPath) {
   var config = void 0;
@@ -101,6 +122,22 @@ function loadBabelConfig(babelConfigPath) {
       throw e;
     }
   }
+
+  if (!config) return null;
+
+  // Remove react-hmre preset.
+  // It causes issues with react-storybook.
+  // We don't really need it.
+  // Earlier, we fix this by runnign storybook in the production mode.
+  // But, that hide some useful debug messages.
+  if (config.presets) {
+    removeReactHmre(config.presets);
+  }
+
+  if (config.env && config.env.development && config.env.development.presets) {
+    removeReactHmre(config.env.development.presets);
+  }
+
   return config;
 }
 

@@ -1,5 +1,34 @@
 ## Changelog
 
+### 1.26.0
+12-May-2016
+
+* Ensure asset directory exists in the static-builder.
+
+### 1.25.0
+11-May-2016
+
+* Fix several publishing related issues. See: [#188](https://github.com/kadirahq/react-storybook/pull/188).
+* Fix babel extends issue. See: [PR185](https://github.com/kadirahq/react-storybook/pull/185).
+* Fix issue with removing a preset from users babelrc.
+  * Fixes: [#183](https://github.com/kadirahq/react-storybook/issues/183).
+  * [PR184](https://github.com/kadirahq/react-storybook/pull/184)
+* Make left panel scrollable with keeping the filterbox always. See: [PR182](https://github.com/kadirahq/react-storybook/pull/182).
+* Add `qs` as a direct dependency as it's used in preview.
+
+### 1.24.0
+10-May-2016
+
+* Add a potential fix for the double scrollbar issue. See: [179](https://github.com/kadirahq/react-storybook/issues/179).
+* Add scrolling support to the left panel. Fixes [#177](https://github.com/kadirahq/react-storybook/issues/177).
+* Remove NODE_ENV=production flag. Fixes [#158](https://github.com/kadirahq/react-storybook/issues/158)
+
+### v1.23.0
+09-May-2016
+
+* Add shortcuts to jump to previous and next stories. See [PR176](https://github.com/kadirahq/react-storybook/pull/176)
+* Fix loader concatentation bug specially when custom config doesn't have a loaders section. [PR173](https://github.com/kadirahq/react-storybook/pull/173)
+
 ### v1.22.1
 06-May-2016
 
